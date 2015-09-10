@@ -1,0 +1,138 @@
+<html>
+<META HTTP-EQUIV="refresh" CONTENT="30">
+			                                  
+	<head>
+		<title>Home</title>
+		<link rel="shortcut icon" type="image/gif" href="http://elaanisvital.com/final_png/icon_-04.png" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
+		<style type="text/css">
+				body {
+			background : #ffffff;
+			background : radial-gradient(ellipse at center, #ffffff 0%, #eee 100%);
+			background : -moz-radial-gradient(#ffffff, #ffffff);
+			background-image: url("bg.jpeg");
+			}
+			.keepcentered {
+			position : absolute;
+			left : 50%;
+			top : 50%;
+			width : 480px;
+			height : 300px;
+			margin-left : -240px;
+			margin-top : -150px;
+			font-weight : 100;
+			}
+			body {
+			font-family: 'Roboto', sans-serif;
+			font-style : normal;
+			color :  #CC0000;  /*Alters the theme color*/
+			margin : 5px;
+			}
+			td, tr {
+			width: 20%;
+			text-align: center;
+			}
+			a {
+			font-weight: 100;
+			color : #000;
+			}
+			a:hover{
+			color: #eee;
+			}
+			a:link {
+			text-decoration : none;
+			text-shadow: 0px 0px 0px #000;
+			}
+			.TextField {
+				width: 400px;
+			}
+</style>
+	</head>
+	<script type="text/javascript" src="https://www.google.com/cse/tools/onthefly?form=searchbox_demo&lang="></script>
+	<body onload="updateClock()">
+		<div class="keepcentered">
+			<center><font size=72><div id="time"></div></font></center>
+			<p><center>
+
+				  <tr>
+				      <tr>
+					  <form method="get" action="http://www.google.nl/search">
+					  <td width="187"><input name="q" type="text" class="TextField" maxlength="255" /></td>
+					  <td width="50" align="right">&nbsp;</td>
+					  </form>
+				      </tr>
+				  </tr>
+
+			<table width="100%" border="0px">
+				<tr>
+					<td>Social</td>
+					<td>Mail</td>
+					<td>School</td>
+					<td>Coding</td>
+					<td>Entertainment</td>
+				</tr>
+				<tr>
+					<td><a href="http://www.facebook.com">Facebook</a></td>
+					<td><a href="http://gmail.com">Gmail</a></td>
+					<td><a href="https://portal.utoronto.ca/webapps/portal/frameset.jsp">Portal</a></td>
+					<td><a href="http://github.com">Github</a></td>
+					<td><a href="http://play.spotify.com">Spotify</a></td>
+				</tr>
+				<tr>
+					<td><a href="https://messenger.com">Messenger</a></td>
+					<td><a href="https://inbox.google.com">Inbox</a></td>
+					<td><a href="https://sws.rosi.utoronto.ca">ROSI</a></td>
+					<td><a href="http://bitbucket.org">BitBucket</a></td>
+					<td><a href="http://youtube.com">YouTube</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://twitter.com">Twitter</a></td>
+					<td><a href="http://mail.utoronto.ca">UTMail</a></td>
+					<td><a href="http://www.math.toronto.edu/~alfonso/137/137.html">MAT137</a></td>
+					<td><a href="http://drive.google.com">Drive</a></td>
+					<td><a href="http://cucirca.eu">TV Shows</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://reddit.com">Reddit</a></td>
+					<td><a href="http://outlook.com">Outlook</a></td>
+					<td><a href="http://www.cdf.utoronto.ca/~csc148h/winter/">CSC148</a></td>
+					<td><a href="https://www.dropbox.com/home">Dropbox</a></td>
+					<td><a href="http://primewire.ag/">Movies</a></td>
+				</tr>
+				<tr>
+					<td><a href="https://www.linkedin.com/nhome/?trk=">Linkedin</a></td>
+					<td><a href="https://www.dropbox.com/sh/5dob5w2ce0eserv/AAAqpLa9vqfhjp0Bwvf7HocDa?dl=0">UTAT</td>
+					<td></td>
+					<td><a href="https://markus.cdf.toronto.edu/csc148-2015-01/?locale=en">MarkUS148</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<br>
+			</center>
+		</p>
+</div>
+	</body>
+	<script>
+		function updateClock() 
+		{
+			Date.getMinutesTwoDigits = function()
+			{
+				var retval = now.getMinutes();
+				if (retval < 10) return ("0" + retval.toString());
+				else return retval.toString();
+			}
+			Date.getHoursModTwelve = function()
+			{
+				var retval = now.getHours();
+				retval = retval%12;
+				if (retval == 0) retval = 12;
+				return retval;
+			}
+			var now = new Date(),
+			time = Date.getHoursModTwelve() + ':' + Date.getMinutesTwoDigits();
+			document.getElementById('time').innerHTML = ["", time].join('');
+			setTimeout(updateClock, 1000);
+		}
+	</script>	
+</html>
